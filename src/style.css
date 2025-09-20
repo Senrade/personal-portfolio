@@ -1,3 +1,135 @@
+/* --- COLOR PALETTE --- */
+:root {
+    --primary-color: #2563eb;      /* Blue 600 */
+    --primary-accent: #60a5fa;     /* Blue 400 */
+    --secondary-color: #f1f5f9;    /* Slate 100 */
+    --secondary-accent: #e0e7ef;   /* Slate 200 */
+    --text-color: #22223b;         /* Deep Navy */
+    --text-muted: #6b7280;         /* Gray 500 */
+    --dark-bg: #181926;            /* Deep Blue Gray */
+    --white-color: #fff;
+    --border-color: #e5e7eb;       /* Slate 200 */
+    --border-dark: #23263a;
+    --highlight: #fbbf24;          /* Amber 400 */
+    --container-width: 1100px;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+    --transition: background 0.4s cubic-bezier(.4,0,.2,1), color 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+body, .header, .navbar, .nav-menu, .footer, .project-card, .contact-form, .contact-info, .scroll-top-btn, .btn, .timeline-item, .blog-post {
+    transition: var(--transition);
+}
+
+.navbar, .header, .footer {
+    background: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-logo {
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.3s;
+}
+.nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-accent));
+    transition: width 0.3s cubic-bezier(.4,0,.2,1);
+    border-radius: 2px;
+    margin-top: 2px;
+}
+.nav-link:hover, .nav-link:focus {
+    color: var(--primary-accent);
+}
+.nav-link:hover::after, .nav-link:focus::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: linear-gradient(135deg, var(--primary-color) 60%, var(--primary-accent) 100%);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+.theme-toggle:hover, .theme-toggle:focus {
+    background: linear-gradient(135deg, var(--primary-accent) 60%, var(--primary-color) 100%);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+}
+#theme-icon {
+    font-size: 1.4rem;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* --- DARK MODE --- */
+:root[data-theme='dark'] {
+    --primary-color: #60a5fa;      /* Blue 400 */
+    --primary-accent: #2563eb;     /* Blue 600 */
+    --secondary-color: #23263a;    /* Deep Navy */
+    --secondary-accent: #181926;   /* Even Deeper */
+    --text-color: #f1f5f9;         /* Slate 100 */
+    --text-muted: #94a3b8;         /* Slate 400 */
+    --dark-bg: #181926;
+    --white-color: #181926;
+    --border-color: #23263a;
+    --border-dark: #334155;
+    --highlight: #fbbf24;
+    --box-shadow: 0 4px 24px rgba(96, 165, 250, 0.10);
+}
+
+:root[data-theme='dark'] .navbar,
+:root[data-theme='dark'] .header,
+:root[data-theme='dark'] .footer {
+    background: var(--secondary-color);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+:root[data-theme='dark'] .nav-logo {
+    color: var(--primary-accent);
+}
+
+:root[data-theme='dark'] .nav-link {
+    color: var(--text-color);
+}
+:root[data-theme='dark'] .nav-link:hover, 
+:root[data-theme='dark'] .nav-link:focus {
+    color: var(--primary-color);
+}
+:root[data-theme='dark'] .nav-link::after {
+    background: linear-gradient(90deg, var(--primary-accent), var(--primary-color));
+}
+
+:root[data-theme='dark'] .theme-toggle {
+    background: linear-gradient(135deg, var(--primary-accent) 60%, var(--primary-color) 100%);
+}
+:root[data-theme='dark'] .theme-toggle:hover, 
+:root[data-theme='dark'] .theme-toggle:focus {
+    background: linear-gradient(135deg, var(--primary-color) 60%, var(--primary-accent) 100%);
+}
+
+:root[data-theme='dark'] body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+}
+
 /* --- VARIABLES & GLOBAL STYLES --- */
 :root {
     --primary-color: #0a66c2; /* LinkedIn Blue */
@@ -175,6 +307,7 @@ a {
 }
 
 /* --- PROJECTS SECTION --- */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -303,14 +436,14 @@ a {
 
 .contact-container {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .contact-form {
     flex: 1;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -332,12 +465,41 @@ a {
 }
 
 .social-links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
 }
 
 .social-links a {
-    margin-right: 1rem;
-    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;           /* Remove background */
+    border-radius: 0;           /* Remove circle */
+    width: auto;                /* Remove fixed width */
+    height: auto;               /* Remove fixed height */
+    box-shadow: none;           /* Remove shadow */
+    font-size: 1.7rem;          /* Slightly larger icon */
+    padding: 0;                 /* Remove padding */
+    transition: color 0.2s;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: var(--highlight);
+    background: none;
+    box-shadow: none;
+}
+
+.social-links .github-icon {
+    width: 40px;
+    height: 40px;
+}
+.social-links .linkedin-icon {
+    width: 33px;
+    height: 33px;
 }
 
 /* --- FOOTER --- */
@@ -367,6 +529,7 @@ a {
     
     .nav-menu.active {
         left: 0;
+        background: var(--white-color);
     }
 
     .nav-item {
@@ -410,4 +573,29 @@ a {
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    z-index: 99;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    opacity: 1;
 }
