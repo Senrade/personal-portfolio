@@ -50,7 +50,7 @@
     <!-- Header with Theme Toggle -->
     <header class="header">
         <nav class="navbar">
-        <a href="#home" class="nav-logo">Your Name</a>
+        <a href="#home" class="nav-logo">Christina Dong</a>
         <ul class="nav-menu" id="nav-menu">
             <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
@@ -67,7 +67,7 @@
 
     <main id="main-content">
         <!-- Home -->
-        <section id="home" class="home-section">
+        <section id="home" class="home-section section-bg-light section-fade">
             <div class="home-content animate-fade">
                 <h1>Hello, I'm <span class="highlight">Christina</span> 👋</h1>
                 <p class="tagline">A Creative Software Engineer Building for the Web.</p>
@@ -79,7 +79,7 @@
         </section>
 
         <!-- Projects with Filters -->
-        <section id="projects" class="content-section">
+        <section id="projects" class="content-section section-bg-dark section-fade">
             <div class="container">
                 <h2>Featured Projects</h2>
                 <div class="project-grid">
@@ -160,7 +160,7 @@
         </section>
 
         <!-- Experience Timeline -->
-        <section id="experience" class="content-section">
+        <section id="experience" class="content-section section-bg-light section-fade">
             <div class="container">
                 <h2>Professional Experience</h2>
                 <div class="experience-timeline">
@@ -188,7 +188,7 @@
         </section>
 
         <!-- Blog with Reading Time -->
-        <section id="blog" class="content-section">
+        <section id="blog" class="content-section section-bg-dark section-fade">
             <div class="container">
                 <h2>My Blogs</h2>
                 <div class="blog-grid">
@@ -205,7 +205,7 @@
         </section>
 
         <!-- Contact Form -->
-        <section id="contact" class="content-section">
+        <section id="contact" class="content-section section-bg-accent section-fade">
   <div class="contact-container">
     <div class="contact-form-wrapper">
       <h2>Get in Touch</h2>
@@ -301,8 +301,50 @@
         const current = root.getAttribute('data-theme');
         setTheme(current === 'dark' ? 'light' : 'dark');
       });
+
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Fade-in on scroll for sections
+  const fadeSections = document.querySelectorAll('.section-fade');
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  fadeSections.forEach(section => observer.observe(section));
     </script>
 
     <script type="module" src="/contact.js"></script>
 </body>
 </html>
+
+<style>
+/* Add this to your style.css */
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: none;
+}
+</style>

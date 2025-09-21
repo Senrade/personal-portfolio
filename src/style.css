@@ -323,7 +323,7 @@ a {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -457,6 +457,13 @@ a {
     border: 1px solid #ccc;
     border-radius: var(--border-radius);
     font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
 .contact-info {
@@ -494,12 +501,12 @@ a {
 }
 
 .social-links .github-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 .social-links .linkedin-icon {
-    width: 33px;
-    height: 33px;
+    width: 40px;
+    height: 40px;
 }
 
 /* --- FOOTER --- */
@@ -599,3 +606,4 @@ a:focus, button:focus, input:focus, textarea:focus {
 .scroll-top-btn:hover {
     opacity: 1;
 }
+
