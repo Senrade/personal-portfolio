@@ -212,7 +212,9 @@
       <form id="contact-form" class="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" name="honeypot" style="display:none">
         <button type="submit" class="btn btn-primary">Send Message</button>
         <div id="form-status" class="form-status"></div>
       </form>
@@ -300,5 +302,7 @@
         setTheme(current === 'dark' ? 'light' : 'dark');
       });
     </script>
+
+    <script type="module" src="/contact.js"></script>
 </body>
 </html>
