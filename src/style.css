@@ -251,6 +251,15 @@ a {
     text-align: center;
     min-height: 90vh;
     padding: 2rem;
+    background: linear-gradient(135deg, #2563eb 0%, #a8cbf5 100%);
+    color: #fff;
+}
+
+/* Optional: Make text in home-section more readable */
+.home-section .tagline,
+.home-section .bio,
+.home-section h1 {
+    color: #fff;
 }
 
 .home-content h1 {
@@ -296,7 +305,7 @@ a {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: #fff;
     color: var(--text-color);
     border: 1px solid #ccc;
 }
@@ -306,8 +315,29 @@ a {
     transform: translateY(-2px);
 }
 
-/* --- PROJECTS SECTION --- */
+/* Ensure "View My Work" and "View Resume" buttons keep their style in all themes */
+.btn-constant,
+.btn-constant.btn-primary,
+.btn-constant.btn-secondary {
+    background-color: #2563eb !important;
+    color: #fff !important;
+    border: 1px solid #2563eb !important;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.btn-constant.btn-secondary {
+    background-color: #fff !important;
+    color: #2563eb !important;
+    border: 1px solid #2563eb !important;
+}
+.btn-constant:hover,
+.btn-constant:focus {
+    background-color: #08569e !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+}
 
+/* --- PROJECTS SECTION --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -506,7 +536,7 @@ a {
 }
 .social-links .linkedin-icon {
     width: 40px;
-    height: 40px;
+    height:40px;
 }
 
 /* --- FOOTER --- */
@@ -607,3 +637,261 @@ a:focus, button:focus, input:focus, textarea:focus {
     opacity: 1;
 }
 
+/* Add this to your style.css */
+.section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+    .section-content {
+        padding: 3rem 1rem;
+    }
+}
+
+/* --- CUSTOM STYLES --- */
+.btn-constant {
+    background-color: #2563eb !important;
+    color: #fff !important;
+    border: 1px solid #2563eb !important;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-constant.btn-secondary {
+    background-color: #fff !important;
+    color: #2563eb !important;
+    border: 1px solid #2563eb !important;
+}
+
+.btn-constant:hover,
+.btn-constant:focus {
+    background-color: #08569e !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+}
+
+/* Specific styles for buttons in the home section */
+.home-section .btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+
+.home-section .btn-primary:hover {
+    background-color: #08569e;
+    transform: translateY(-2px);
+}
+
+.home-section .btn-secondary {
+    background-color: #fff;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.home-section .btn-secondary:hover {
+    background-color: #e0e7ef;
+    transform: translateY(-2px);
+}
+
+/* Specific styles for buttons in the projects section */
+.project-card .btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+
+.project-card .btn-primary:hover {
+    background-color: #08569e;
+    transform: translateY(-2px);
+}
+
+.project-card .btn-secondary {
+    background-color: #fff;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.project-card .btn-secondary:hover {
+    background-color: #e0e7ef;
+    transform: translateY(-2px);
+}
+
+/* Specific styles for buttons in the contact section */
+.contact-form .btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #08569e;
+    transform: translateY(-2px);
+}
+
+.contact-form .btn-secondary {
+    background-color: #fff;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.contact-form .btn-secondary:hover {
+    background-color: #e0e7ef;
+    transform: translateY(-2px);
+}
+
+/* Ensure consistent button styles across all sections */
+.btn {
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #08569e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--text-color);
+    border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* --- FULL WIDTH SECTION BACKGROUNDS --- */
+.section-bg-gradient-blue {
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    color: #fff;
+}
+.section-bg-gradient-slate {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e0e7ef 100%);
+    color: #22223b;
+}
+.section-bg-gradient-navy {
+    background: linear-gradient(135deg, #23263a 0%, #181926 100%);
+    color: #f1f5f9;
+}
+.section-bg-gradient-lightblue {
+    background: linear-gradient(135deg, #e3edfa 0%, #f1f5f9 100%);
+    color: #22223b;
+}
+
+/* Centered content for all sections */
+.section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+    .section-content {
+        padding: 3rem 1rem;
+    }
+}
+
+/* --- DARK MODE ADAPTATION --- */
+:root[data-theme='dark'] .section-bg-gradient-blue {
+    background: linear-gradient(135deg, #23263a 0%, #2563eb 100%);
+    color: #f1f5f9;
+}
+:root[data-theme='dark'] .section-bg-gradient-slate {
+    background: linear-gradient(135deg, #23263a 0%, #181926 100%);
+    color: #f1f5f9;
+}
+:root[data-theme='dark'] .section-bg-gradient-navy {
+    background: linear-gradient(135deg, #181926 0%, #23263a 100%);
+    color: #f1f5f9;
+}
+:root[data-theme='dark'] .section-bg-gradient-lightblue {
+    background: linear-gradient(135deg, #23263a 0%, #334155 100%);
+    color: #f1f5f9;
+}
+
+/* --- FADE ANIMATION --- */
+.section-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SPECIFIC SECTION STYLES --- */
+#home {
+    /* Home section specific styles */
+}
+
+#projects {
+    /* Projects section specific styles */
+}
+
+#experience {
+    /* Experience section specific styles */
+}
+
+#blog {
+    /* Blog section specific styles */
+}
+
+#contact {
+    /* Contact section specific styles */
+}
+
+.project-info p {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Make contact info text and links white for better contrast on blue */
+.section-bg-gradient-blue .contact-info,
+.section-bg-gradient-blue .contact-info a,
+.section-bg-gradient-blue .contact-info strong {
+    color: #fff !important;
+}
+
+/* Make social icons white and add hover effect */
+.section-bg-gradient-blue .social-links a svg {
+    color: #fff !important;
+    fill: #fff !important;
+    transition: color 0.2s, fill 0.2s;
+}
+.section-bg-gradient-blue .social-links a:hover svg,
+.section-bg-gradient-blue .social-links a:focus svg {
+    color: #fbbf24 !important; /* highlight color on hover */
+    fill: #fbbf24 !important;
+}
+
+/* Prevent sticky navbar from hiding section content */
+section {
+  scroll-margin-top: 60px; /* Set to your navbar height */
+}
