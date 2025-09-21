@@ -5,6 +5,8 @@ export default defineConfig({
   // Tell Vite where our source code is.
   root: 'src',
   
+  publicDir: resolve(__dirname, 'public'),
+  
   build: {
     // This is the folder where Vite will put the built files.
     // We want it to be in the main project folder, not inside `src`.

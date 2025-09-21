@@ -1,0 +1,48 @@
+Folder PATH listing for volume Data
+Volume serial number is C4A0-6029
+D:.
++---.github
+¦   +---workflows
++---netlify
+¦   +---functions
++---node_modules
+¦   +---.bin
+¦   +---.vite
+¦   ¦   +---deps
+¦   +---@esbuild
+¦   ¦   +---win32-x64
+¦   +---@rollup
+¦   ¦   +---rollup-win32-x64-gnu
+¦   ¦   +---rollup-win32-x64-msvc
+¦   +---@types
+¦   ¦   +---estree
+¦   +---esbuild
+¦   ¦   +---bin
+¦   ¦   +---lib
+¦   +---nanoid
+¦   ¦   +---async
+¦   ¦   +---bin
+¦   ¦   +---non-secure
+¦   ¦   +---url-alphabet
+¦   +---picocolors
+¦   +---postcss
+¦   ¦   +---lib
+¦   +---rollup
+¦   ¦   +---dist
+¦   ¦       +---bin
+¦   ¦       +---es
+¦   ¦       ¦   +---shared
+¦   ¦       +---shared
+¦   +---source-map-js
+¦   ¦   +---lib
+¦   +---vite
+¦       +---bin
+¦       +---dist
+¦       ¦   +---client
+¦       ¦   +---node
+¦       ¦   ¦   +---chunks
+¦       ¦   +---node-cjs
+¦       +---types
++---public
+¦   +---assets
++---src
